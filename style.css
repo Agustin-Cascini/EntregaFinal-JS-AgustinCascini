@@ -1,9 +1,11 @@
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
 
-    background-color: rgba(255, 250, 250);
+body {
+    background-color: rgb(255, 236, 236);
 }
 
 header {
@@ -14,16 +16,116 @@ header {
 }
 
 main {
-    padding-bottom: 40px;
+    margin: 10px 0;
+}
+
+footer {
+    background-color: lightgreen;
+    height: 1200px;
+}
+
+h1 {
+    position: relative;
+    padding: 5px;
+    margin: 0px;
 }
 
 .navbar {
     box-shadow: 0 2px 15px black;
+    z-index: 10;
 }
 
 
 
-.mainContainer {
+/* ----- PRODUCT CARDS ----- */
+
+.shop-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px 80px 0 80px;
+}
+
+.cardContainer {
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.6);
+    max-width: 300px;
+    margin: 15px 0;
+    padding: 10px 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+
+.cardContainer img {
+    width: 90%;
+    height: 250px;
+}
+
+
+.cardContainer span {
+    color: grey;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.cardContainer i {
+    border-radius: 7px;
+    box-shadow: 0 2px 8px 0 black;
+    padding: 6px;
+    background-color: black;
+    color: white;
+}
+
+.cardContainer i:hover {
+    color: rgb(255, 135, 155);
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.price {
+    font-size: 22px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .mainContainer {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,13 +134,12 @@ main {
 
 .cardsContainer {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     background-color: white;
     width: 85vw;
     height: 450px;
     padding: 40px 0 0;
-    border-radius: 15px;
+    border-radius: 10px;
     padding-bottom: 40px;
 }
 
@@ -61,11 +162,7 @@ main {
     font-size: 25px;
     padding: 2px 5px;
     border-radius: 10px;
-}
+} */
 
 
 
-footer {
-    background-color: lightgreen;
-    height: 200px;
-}
