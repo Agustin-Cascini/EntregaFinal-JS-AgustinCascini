@@ -39,16 +39,17 @@ h1 {
 
 /* ----- PRODUCT CARDS ----- */
 
-.shop-content {
+.shop-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 30px 80px 0 80px;
+    margin: 30px 80px;
 }
 
 .cardContainer {
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.6);
     max-width: 300px;
+    min-width: 200px;
     margin: 15px 0;
     padding: 10px 0;
     text-align: center;
@@ -57,37 +58,41 @@ h1 {
 }
 
 .cardContainer img {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
     width: 90%;
     height: 250px;
 }
 
-
-.cardContainer span {
+.categoria-producto {
     color: grey;
     font-size: 16px;
     text-transform: uppercase;
 }
 
-.cardContainer i {
-    border-radius: 7px;
-    box-shadow: 0 2px 8px 0 black;
-    padding: 6px;
-    background-color: black;
-    color: white;
+.cardContainer h3 {
+    margin-bottom: 5px;
 }
 
-.cardContainer i:hover {
+.cardContainer .span-add {
+    border-radius: 7px;
+    box-shadow: 0 2px 8px 0 black;
+    padding: 6px 50px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.cardContainer .span-add:hover {
     color: rgb(255, 135, 155);
     font-size: 18px;
     transition: 0.3s;
 }
 
-.price {
-    font-size: 22px;
+.product-price {
+    margin-bottom: 5px;
+    font-size: 18px;
 }
-
-
-
 
 
 
