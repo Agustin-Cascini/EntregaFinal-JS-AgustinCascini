@@ -25,7 +25,7 @@ const printProducts = (productsList) => {
 
 cardBtn.addEventListener('click', (e) => {
     console.log(e.target);
-})
+})  
 
 
 
