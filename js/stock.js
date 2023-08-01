@@ -1,55 +1,55 @@
 const productsList = [
   {
     id: 1,
-    categoria: '(Almohada)',
-    nombre: 'Vellon',
-    precio: 4500,
+    category: '(Almohada)',
+    name: 'Vellon',
+    price: 4500,
     img: '../img/almohadaVellonOk.jpg',
-    cantidad: 1
+    quantity: 1
   },
   {
     id: 2,
-    categoria: '(Almohada)',
-    nombre: 'Viscoelastica',
-    precio: 8500,
+    category: '(Almohada)',
+    name: 'Viscoelastica',
+    price: 8500,
     img: '../img/almohadaViscoelasticaOk.jpg',
-    cantidad: 1
+    quantity: 1
   },
   {
     id: 3,
-    categoria: '(Colchon)',
-    nombre: 'Griffyndor',
+    category: '(Colchon)',
+    name: 'Griffyndor',
     tipo: 'Espuma',
-    precio: 16000,
+    price: 63400,
     img: '../img/colchonGriffyndorOk.jpg',
-    cantidad: 1
+    quantity: 1
   },
   {
     id: 4,
-    categoria: '(Colchon)',
-    nombre: 'Hufflepuff',
+    category: '(Colchon)',
+    name: 'Hufflepuff',
     tipo: 'Espuma',
-    precio: 50000,
+    price: 60200,
     img: '../img/colchonHufflepuffOk.jpg',
-    cantidad: 1
+    quantity: 1
   },
   {
     id: 5,
-    categoria: '(Colchon)',
-    nombre: 'Revenclaw',
+    category: '(Colchon)',
+    name: 'Revenclaw',
     tipo: 'Espuma',
-    precio: 58000,
+    price: 58000,
     img: '../img/colchonRevenclawOk.jpg',
-    cantidad: 1
+    quantity: 1
   },
   {
     id: 6,
-    categoria: '(Colchon)',
-    nombre: 'Slytherin',
+    category: '(Colchon)',
+    name: 'Slytherin',
     tipo: 'Resorte',
-    precio: 65000,
+    price: 74600,
     img: '../img/colchonSlytherinOk.jpg',
-    cantidad: 1
+    quantity: 1
   }
 ];
 
