@@ -4,95 +4,26 @@
     box-sizing: border-box;
 }
 
+h1 {
+    font-size: 30px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+
 body {
     background-color: rgb(255, 236, 236);
 }
 
-header {
-    font-size: 25px;
-    text-align: center;
-    background-color: black;
-    color: white;
-}
-
-main {
-    margin: 10px 0;
-}
 
 footer {
     background-color: lightgreen;
     height: 1200px;
 }
 
-h1 {
-    position: relative;
-    padding: 5px;
-    margin: 0px;
-}
-
-.navbar {
-    box-shadow: 0 2px 15px black;
-    z-index: 10;
-}
-
-
-
 /* ----- PRODUCT CARDS ----- */
 
-.shop-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 30px 80px;
-}
-
-.cardContainer {
-    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.6);
-    max-width: 300px;
-    min-width: 200px;
-    margin: 15px 0;
-    padding: 10px 0;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 5px;
-}
-
-.cardContainer img {
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    border-radius: 5px;
-    width: 90%;
-    height: 250px;
-}
-
-.categoria-producto {
-    color: grey;
-    font-size: 16px;
-    text-transform: uppercase;
-}
-
-.cardContainer h3 {
-    margin-bottom: 5px;
-}
-
-.cardContainer .span-add {
-    border-radius: 7px;
-    box-shadow: 0 2px 8px 0 black;
-    padding: 6px 50px;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-}
-
-.cardContainer .span-add:hover {
-    color: rgb(255, 135, 155);
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.product-price {
-    margin-bottom: 5px;
-    font-size: 18px;
-}
 
 
 
@@ -115,59 +46,6 @@ h1 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .mainContainer {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.cardsContainer {
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    width: 85vw;
-    height: 450px;
-    padding: 40px 0 0;
-    border-radius: 10px;
-    padding-bottom: 40px;
-}
-
-.card {
-    margin: 0 25px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.600);
-}
-
-.cardHeader {
-    position: relative;
-    align-items: center;
-    justify-content: end;
-    display: flex;
-    flex-direction: column;
-}
-
-.bi-cart {
-    background-color: black;
-    color: white;
-    font-size: 25px;
-    padding: 2px 5px;
-    border-radius: 10px;
-} */
 
 
 
