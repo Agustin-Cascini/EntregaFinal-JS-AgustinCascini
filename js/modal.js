@@ -19,3 +19,9 @@ window.addEventListener('click', (e) => {
         myModal.style.display = 'none';
     }
 });
+
+myModal.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-btn')) {
+        deleteCartProduct(e.target.value);
+    }
+})

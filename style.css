@@ -103,6 +103,9 @@ footer {
     margin: 20px auto;
     padding: 20px;
     border-radius: 10px;
+    overflow: hidden;
+    overflow: scroll;
+    
 }
 
 .modal-btn-close {

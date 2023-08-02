@@ -44,5 +44,10 @@ const printCartProducts = (object) => {
 };
 
 
+const deleteCartProduct = (id) => {
+    console.log(id);
+}
+
+
 
 
