@@ -6,6 +6,7 @@ const myModal = document.getElementById('myModal');
 // Evento para abrir el modal clickeando el icono 'cart'.
 openModal.addEventListener ('click', () => {
     myModal.style.display = 'block';
+    // console.log(cart);
 });
 
 // Evento para cerrar el modal clickeando el iconod e la cruz.
@@ -20,6 +21,7 @@ window.addEventListener('click', (e) => {
     }
 });
 
+// Evento para capturar el id del boton que eliminara el producto dentro del carrito.
 myModal.addEventListener('click', (e) => {
     if (e.target.classList.contains('delete-btn')) {
         deleteCartProduct(e.target.value);

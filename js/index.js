@@ -13,8 +13,8 @@ const printProducts = (stock) => {
             <div class="card-body">
                 <h3 class="card-category">${product.category}</h3>
                 <h2 class="card-name">${product.name}</h2>
-                <p class="card-price">${product.price}</p>
-                <i id="${product.id}" class="bi bi-cart-plus btn-add-cart"></i>
+                <p class="card-price">$${product.price}</p>
+                <i id="${product.id}" class="bi bi-cart-plus btn-add-cart"> Agregar</i>
             </div>
         `;
         
@@ -22,27 +22,5 @@ const printProducts = (stock) => {
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', printProducts(productsList));
+document.addEventListener('DOMContentLoaded', loadCart());
