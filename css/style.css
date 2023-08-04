@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pre-entrega {
+    font-size: 30px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(255, 236, 236);
+}
+
+
+footer {
+    background-color: lightgreen;
+    height: 250px;
+    text-align: center;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0 55px 0 30px;
+    box-shadow: 0 3px 10px black;
+    border-radius: 0 0 10px 10px;
+}
+.navBar #cartChango {
+    font-size: 1.6rem;
+}
+
+#cartCounter {
+    color: black;
+    background-color: pink;
+    padding: 0 5px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+}
+
+
+
+

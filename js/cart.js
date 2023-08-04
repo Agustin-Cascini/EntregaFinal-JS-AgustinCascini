@@ -41,7 +41,7 @@ const printCartProducts = (object) => {
             <p class="mbc-name">${object.name}</p>
             <p class="mbc-price">$${object.price}</p>
         </span>
-        <i id="subtractQuantity" class="bi bi-dash-circle-fill"></i> <p id="qty${object.id}" class="mbc-qty">${object.quantity}</p> <i id="addQuantity" class="bi bi-plus-circle-fill"></i>
+        <i id="${object.id}" class="bi bi-dash-circle-fill subtract-quantity"></i> <p id="qty${object.id}" class="mbc-qty">${object.quantity}</p> <i id="${object.id}" class="bi bi-plus-circle-fill add-quantity"></i>
         <button class="delete-btn" value="${object.id}">X</button>
     `;
 
@@ -54,21 +54,31 @@ const printCart = (cart) => {
 
     modalBody.innerHTML = '';
 
-    cart.forEach(object => {
-        const modalBodyContainer = document.createElement('div');
-        modalBodyContainer.className = 'modal-body-container';
-        modalBodyContainer.innerHTML = `
-            <img src="${object.img}">
-            <span class="mbc-name-price">
-                <p class="mbc-name">${object.name}</p>
-                <p class="mbc-price">$${object.price}</p>
-            </span>
-            <i id="subtractQuantity" class="bi bi-dash-circle-fill"></i> <p id="qty${object.id}" class="mbc-qty">${object.quantity}</p> <i id="addQuantity" class="bi bi-plus-circle-fill"></i>
-            <button class="delete-btn" value="${object.id}">X</button>
-        `;
+    if (cart.length == 0){
+        const modalBodyEmpty = document.createElement('p');
+        modalBodyEmpty.className = 'modal-body-empty';
+        modalBodyEmpty.innerText = 'El carrito esta vacio';
+
+        modalBody.appendChild(modalBodyEmpty);
+    } else {
+        cart.forEach(object => {
+            const modalBodyContainer = document.createElement('div');
+            modalBodyContainer.className = 'modal-body-container';
+            modalBodyContainer.innerHTML = `
+                <img src="${object.img}">
+                <span class="mbc-name-price">
+                    <p class="mbc-name">${object.name}</p>
+                    <p class="mbc-price">$${object.price}</p>
+                </span>
+                <i id="${object.id}" class="bi bi-dash-circle-fill subtract-quantity"></i> <p id="qty${object.id}" class="mbc-qty">${object.quantity}</p> <i id="${object.id}" class="bi bi-plus-circle-fill add-quantity"></i>
+                <button class="delete-btn" value="${object.id}">X</button>
+            `;
+        
+            modalBody.appendChild(modalBodyContainer);
+        });
+    }
+
     
-        modalBody.appendChild(modalBodyContainer);
-    })
 };
 
 
@@ -85,13 +95,22 @@ const deleteCartProduct = (id) => {
 
 // Funcion para mostrar el precio total de los productos seleccionados en el carrito.
 const updateQtyAndPrice = (cart) => {
-    const totalCartQty = cart.reduce((acc, el) => acc + el.quantity, 0);
-    const totalCartPrice = cart.reduce((acc, el) => acc + (el.price * el.quantity), 0); 
-    // console.log(totalCartQty);   
-    // console.log(totalCartPrice);
+
+    if (cart.length == 0){
+        const totalCartQty = 0;
+        const totalCartPrice = 0;
+
+        printQtyAndPrice(totalCartQty, totalCartPrice);
+        saveCartStorage(cart);
+    } else {
+        const totalCartQty = cart.reduce((acc, el) => acc + el.quantity, 0);
+        const totalCartPrice = cart.reduce((acc, el) => acc + (el.price * el.quantity), 0); 
+        // console.log(totalCartQty);   
+        // console.log(totalCartPrice);
     
-    printQtyAndPrice(totalCartQty, totalCartPrice);
-    saveCartStorage(cart);
+        printQtyAndPrice(totalCartQty, totalCartPrice);
+        saveCartStorage(cart);
+    } 
 }
 
 // Funcion para pintar el valor total de la compra.
@@ -101,6 +120,27 @@ const printQtyAndPrice = (totalCartQty, totalCartPrice) => {
 
     cartCounter.innerText = totalCartQty;
     totalPrice.innerText = totalCartPrice;
+}
+
+// Funcion para RESTAR una unidad del producto en el carrito.
+const subtractOneUnity = (e) => {
+    const idSubtractButton = cart.find(product => product.id == e.target.id);
+    if (idSubtractButton.quantity > 1) {
+        idSubtractButton.quantity--
+    }
+    console.log(idSubtractButton);
+    printCart(cart);
+    saveCartStorage(cart);
+}
+
+// Funcion para SUMAR una uniodad del producto en el carrito.
+const addOneUnity = (e) => {
+    const idaddButton = cart.find(product => product.id == e.target.id);
+    idaddButton.quantity++
+    
+    console.log(idaddButton);
+    printCart(cart);
+    saveCartStorage(cart);
 }
 
 

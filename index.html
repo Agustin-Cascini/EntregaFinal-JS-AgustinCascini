@@ -12,8 +12,10 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Links CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="./css/cards.css">
 
   <title>PreEntrega3AgustinCascini</title>
 </head>
@@ -27,7 +29,9 @@
 
     <nav class="navBar">
       <h1> COLCHONES GANGA </h1>
-      <i id="cartChango" class="bi bi-cart-fill"></i><span id="cartCounter">0</span>
+      <div class="nav-bar-cart">
+        <i id="cartChango" class="bi bi-cart-fill"></i><span id="cartCounter">0</span>
+      </div>
     </nav>
 
   </header>
@@ -61,7 +65,11 @@
 
         <!-- Footer del MODAL -->
         <div id="modalFooter" class="modal-footer">
-          <p class="total-price">Precio Total: $ <span id="totalPrice"></span></p>
+          <p class="total-price">Precio Total: $<span id="totalPrice"></span></p>
+          <div class="modal-footer-btns">
+            <button class="clean-cart-btn"> Vaciar Carrito </button>
+            <button class="buy-btn"> Pagar </button>
+          </div>
         </div>
 
       </div>
@@ -71,7 +79,7 @@
 
 
   <footer>
-
+    <p>Le agregare la info correspondiente para la entrega final :)</p>
   </footer>
 
 
