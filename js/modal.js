@@ -10,10 +10,14 @@ openModal.addEventListener ('click', () => {
     // console.log(cart);
 });
 
-// Evento para cerrar el modal clickeando el iconod e la cruz.
+// Evento y funcion para cerrar el modal clickeando el iconod e la cruz.
 closeModal.addEventListener('click', () => {
     myModal.style.display = 'none';
 });
+
+const closeModalFnc = () => {
+    myModal.style.display = 'none';
+}
 
 // Evento para cerrar el modal clickeando por fuera del container del modal. (Ayuda de Papi Gpt).
 window.addEventListener('click', (e) => {
@@ -35,16 +39,71 @@ myModal.addEventListener('click', (e) => {
     }
 })
 
-// Evento para vaciar el carrito o pagar por la compra.
+// Evento para vaciar el carrito. 
+// modalFooter.addEventListener('click', (e) => {
+//     if (e.target.classList.contains('clean-cart-btn')) {
+//         let confirmBtn = confirm('¿Seguro que desea vaciar el carrito?');
+
+//         if (confirmBtn){
+//             cart = [];
+            
+//         }
+//         printCart(cart);
+//         updateQtyAndPrice(cart);
+//     }
+// })
+
 modalFooter.addEventListener('click', (e) => {
     if (e.target.classList.contains('clean-cart-btn')) {
-        let confirmBtn = confirm('¿Seguro que desea vaciar el carrito?');
 
-        if (confirmBtn){
-            cart = [];
-            
-        }
-        printCart(cart);
-        updateQtyAndPrice(cart);
+        Swal.fire({
+            title: '¿Desea vaciar el carrito de compras?',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Vaciar Carrito',
+            confirmButtonColor: 'pink',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Se ha vaciado el carrito!',
+                    '',
+                    'success',
+                )
+                cart = [];
+                printCart(cart);
+                updateQtyAndPrice(cart);
+                closeModalFnc();
+            }
+        })   
+    }
+})
+
+
+// Evento para pagar por la compra.
+modalFooter.addEventListener('click', (e) => {
+    const totalCartPrice = cart.reduce((acc, el) => acc + (el.price * el.quantity), 0);
+
+    if (e.target.classList.contains('buy-btn')) {
+        
+        Swal.fire({
+            title: `Su importe a abonar es de $${totalCartPrice}`,
+            confirmButtonText: 'Pagar',
+            confirmButtonColor: 'pink',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar',
+            // cancelButtonColor: 'red',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire (
+                    'Muchas gracias por su compra! Vuelva pronto!',
+                    '',
+                    'success',
+                )
+                cart = [];
+                printCart(cart);
+                updateQtyAndPrice(cart);
+                closeModalFnc();
+            }
+        })
     }
 })

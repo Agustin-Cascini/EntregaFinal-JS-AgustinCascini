@@ -20,11 +20,13 @@ const addToCart = (id) => {
         cart.push(product);
         printCartProducts(product);
         updateQtyAndPrice(cart);
+        
     } else {
         const product = cart.find(product => product.id == id);
         const modalQuantityProduct = document.getElementById(`qty${product.id}`)
         product.quantity++
         modalQuantityProduct.innerText = `${product.quantity}`;
+
         updateQtyAndPrice(cart);
     }
 }
@@ -135,10 +137,10 @@ const subtractOneUnity = (e) => {
 
 // Funcion para SUMAR una uniodad del producto en el carrito.
 const addOneUnity = (e) => {
-    const idaddButton = cart.find(product => product.id == e.target.id);
-    idaddButton.quantity++
+    const idAddButton = cart.find(product => product.id == e.target.id);
+    idAddButton.quantity++
     
-    console.log(idaddButton);
+    console.log(idAddButton);
     printCart(cart);
     saveCartStorage(cart);
 }

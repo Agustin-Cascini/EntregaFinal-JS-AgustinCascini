@@ -39,6 +39,15 @@
 
 /* ----- ESTILOS PARA EL MODAL-BODY ----- */
 
+.modal-body-empty {
+    text-align: center;
+    text-transform: uppercase;
+    color: red;
+    font-size: 1.4rem;
+    margin: 15px 0;
+}
+
+
 .modal-body-container {
     display: flex;
     justify-content: space-around;
@@ -112,6 +121,7 @@
     justify-content: center;
     text-align: center;
 }
+
 
 .modal-footer .modal-footer-btns {
     margin: 10px;
