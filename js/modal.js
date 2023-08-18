@@ -52,14 +52,14 @@ modalFooter.addEventListener('click', (e) => {
             showCancelButton: true,
             cancelButtonText: 'Cancelar',
             confirmButtonText: 'Vaciar Carrito',
-            confirmButtonColor: 'pink',
+            confirmButtonColor: 'red',
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                    'Se ha vaciado el carrito!',
-                    '',
-                    'success',
-                )
+                Swal.fire({
+                    title: 'Se ha vaciado el carrito!',
+                    icon: 'success',
+                    confirmButtonColor: 'red'
+                })
                 cart = [];
                 printCart(cart);
                 updateQtyAndPrice(cart);
@@ -79,17 +79,17 @@ modalFooter.addEventListener('click', (e) => {
         Swal.fire({
             title: `Su importe a abonar es de $${totalCartPrice}`,
             confirmButtonText: 'Pagar',
-            confirmButtonColor: 'pink',
+            confirmButtonColor: 'red',
             showCancelButton: true,
             cancelButtonText: 'Cancelar',
             // cancelButtonColor: 'red',
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire (
-                    'Muchas gracias por su compra! Vuelva pronto!',
-                    '',
-                    'success',
-                )
+                Swal.fire ({
+                    title: 'Muchas gracias por su compra, vuelva pronto!',
+                    icon: 'success',
+                    confirmButtonColor: 'red'
+                })
                 cart = [];
                 printCart(cart);
                 updateQtyAndPrice(cart);

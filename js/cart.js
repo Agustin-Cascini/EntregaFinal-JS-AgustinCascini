@@ -51,10 +51,12 @@ const addToCart = (id) => {
         gravity: "bottom", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         style: {
-            background: "white",
+            background: "red",
             borderRadius: "10px",
-            color: "black",
-            fontSize: '1.3rem'
+            color: "white",
+            fontSize: '1.3rem',
+            border: '2px solid black',
+            boxShadow: '0 0 5px black'
         },
         offset: {
             x: '1.5rem'

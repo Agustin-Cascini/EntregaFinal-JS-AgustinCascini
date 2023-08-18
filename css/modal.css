@@ -28,7 +28,7 @@
 
 .modal-btn-close {
     font-size: 1.8rem;
-    color: pink;
+    color: red;
     padding: 0 6px;
     border-radius: 50%;
     float: right;
@@ -78,38 +78,38 @@
     border: 1px solid grey;
     padding: 0 10px;
     border-radius: 5px;
-    box-shadow: 0 0 8px rgb(119, 119, 119);
+    box-shadow: 0 0 8px var(--color2);
     font-weight: 600;
-    color: pink;
+    color: var(--color3);
     transition: 0.4s;
 }
 
 .delete-btn:hover {
-    background-color: pink;
-    color: black;
-    scale: 1.2;
+    background-color: var(--color3);
+    color: var(--color1);
+    scale: 1.15;
 }
 
 .add-quantity {
     font-size: 1.8rem;
-    color: pink;
+    color: var(--color3);
     transition: 0.4s;
 }
 
 .add-quantity:hover {
-    scale: 1.2;
-    color: rgb(255, 137, 157);
+    scale: 1.2;   
+    color: var(--color2); 
 }
 
 .subtract-quantity {
     font-size: 1.8rem;
-    color: pink;
+    color: var(--color3);
     transition: 0.4s;
 }
 
 .subtract-quantity:hover {
     scale: 1.2;
-    color: rgb(255, 137, 157);
+    color: var(--color2);
 }
 
 /* ----- ESTILOS PARA EL MODAL-FOOTER ----- */

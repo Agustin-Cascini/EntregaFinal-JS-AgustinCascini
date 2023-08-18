@@ -35,7 +35,7 @@ const callAdviser = () => {
             fontWeight: 'bolder',
             border: '2px solid black',
             borderRadius: '10px',
-            background: 'linear-gradient(to right, white, rgba(255, 192, 203, 0.671), white)'
+            background: 'linear-gradient(to right, white, rgba(200, 30, 30, 0.85), white)',
         },
     }).showToast()
 }
