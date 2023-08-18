@@ -7,7 +7,6 @@
 
   <!-- Link para Toastify -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <!-- Link para SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -62,6 +61,9 @@
           <h2>Tu Carrito:</h2>
           <i id="modalBtnClose" class="bi bi-x-circle modal-btn-close"></i>
         </div>
+        <div>
+          <p id="emptyCart" class="empty-cart">- EL CARRITO ESTA VACIO -</p>
+        </div>
 
         <!-- Body del MODAL -->
         <div id="modalBody" class="modal-body">
@@ -90,7 +92,11 @@
   </footer>
 
 
-  <script src="./js/stock.js"></script>
+
+
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
   <script src="./js/modal.js"></script>
   <script src="./js/cart.js"></script>
   <script src="./js/index.js"></script>

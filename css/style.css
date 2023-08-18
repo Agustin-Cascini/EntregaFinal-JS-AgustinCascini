@@ -52,16 +52,8 @@ footer {
     font-size: 1.3rem;
 }
 
-.toast1 {
-    color: black;
-    font-weight: bolder;
-    border: 2px solid black;
-    border-radius: 10px;
-    background: linear-gradient(to right, white, rgba(255, 192, 203, 0.671), white);
-}
-
 .toast1:hover {
-    background-color: purple;
+    background-color: purple !important;
 }
 
 

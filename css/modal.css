@@ -35,18 +35,17 @@
     cursor: pointer;
 }
 
+.empty-cart {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: red;
+}
+
 
 
 /* ----- ESTILOS PARA EL MODAL-BODY ----- */
-
-.modal-body-empty {
-    text-align: center;
-    text-transform: uppercase;
-    color: red;
-    font-size: 1.4rem;
-    margin: 15px 0;
-}
-
 
 .modal-body-container {
     display: flex;

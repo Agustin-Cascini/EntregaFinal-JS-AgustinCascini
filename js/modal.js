@@ -4,20 +4,23 @@ const closeModal = document.getElementById('modalBtnClose');
 const myModal = document.getElementById('myModal');
 const modalFooter = document.getElementById('modalFooter');
 
+
 // Evento para abrir el modal clickeando el icono 'cart'.
 openModal.addEventListener ('click', () => {
     myModal.style.display = 'block';
-    // console.log(cart);
 });
+
 
 // Evento y funcion para cerrar el modal clickeando el iconod e la cruz.
 closeModal.addEventListener('click', () => {
     myModal.style.display = 'none';
 });
 
+
 const closeModalFnc = () => {
     myModal.style.display = 'none';
 }
+
 
 // Evento para cerrar el modal clickeando por fuera del container del modal. (Ayuda de Papi Gpt).
 window.addEventListener('click', (e) => {
@@ -25,6 +28,7 @@ window.addEventListener('click', (e) => {
         myModal.style.display = 'none';
     }
 });
+
 
 // Evento para aumentar la cantidad, reducir la cantidad o eliminar el producto del carrito.
 myModal.addEventListener('click', (e) => {
@@ -39,19 +43,6 @@ myModal.addEventListener('click', (e) => {
     }
 })
 
-// Evento para vaciar el carrito. 
-// modalFooter.addEventListener('click', (e) => {
-//     if (e.target.classList.contains('clean-cart-btn')) {
-//         let confirmBtn = confirm('¿Seguro que desea vaciar el carrito?');
-
-//         if (confirmBtn){
-//             cart = [];
-            
-//         }
-//         printCart(cart);
-//         updateQtyAndPrice(cart);
-//     }
-// })
 
 modalFooter.addEventListener('click', (e) => {
     if (e.target.classList.contains('clean-cart-btn')) {

@@ -11,6 +11,20 @@ shopContainer.addEventListener('click', (e) => {
     }
 });
 
+
+// Funcion que muestra el mensaje de "EL CARRITO ESTA VACIO".
+const cartIsEmpty = (cart) => {
+
+    const emptyCart = document.getElementById('emptyCart');
+
+    if (!cart.length == 0) {
+        emptyCart.style.display = 'none';
+    } else {
+        emptyCart.style.display = 'block';
+    }
+}
+
+
 // Funcion para agregar el producto seleccionado al carrito, contiene la validacion para aumentar su cantidad en caso de ya existir dentro de mi variable cart.
 const addToCart = (id) => {
     const isRepeated = cart.some(product => product.id == id);
@@ -26,12 +40,31 @@ const addToCart = (id) => {
         const modalQuantityProduct = document.getElementById(`qty${product.id}`)
         product.quantity++
         modalQuantityProduct.innerText = `${product.quantity}`;
-
+        
         updateQtyAndPrice(cart);
     }
+
+    // Toast para avisar que se agrego el producto al carrito.
+    Toastify({
+        text: "¡Producto Agregado!",
+        duration: 1500,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        style: {
+            background: "white",
+            borderRadius: "10px",
+            color: "black",
+            fontSize: '1.3rem'
+        },
+        offset: {
+            x: '1.5rem'
+            
+          },
+      }).showToast();
 }
 
-// Funcion para pintar los productos seleccionados por el usuario que se encuentran en la variable cart dentro del modal.
+
+// Funcion para pintar los productos seleccionados por el usuario, que se encuentran en la variable cart, dentro del modal.
 const printCartProducts = (object) => {
     const modalBody = document.getElementById('modalBody');
 
@@ -47,8 +80,10 @@ const printCartProducts = (object) => {
         <button class="delete-btn" value="${object.id}">X</button>
     `;
 
+    cartIsEmpty(cart);
     modalBody.appendChild(modalBodyContainer);
 };
+
 
 // Funcion para pintar dentro del modal los productos que se encuentren en la variable cart (La usaremos para volver a pintar los productos una vez que se elimine alguno).
 const printCart = (cart) => {
@@ -56,31 +91,23 @@ const printCart = (cart) => {
 
     modalBody.innerHTML = '';
 
-    if (cart.length == 0){
-        const modalBodyEmpty = document.createElement('p');
-        modalBodyEmpty.className = 'modal-body-empty';
-        modalBodyEmpty.innerText = 'El carrito esta vacio';
-
-        modalBody.appendChild(modalBodyEmpty);
-    } else {
-        cart.forEach(object => {
-            const modalBodyContainer = document.createElement('div');
-            modalBodyContainer.className = 'modal-body-container';
-            modalBodyContainer.innerHTML = `
-                <img src="${object.img}">
-                <span class="mbc-name-price">
-                    <p class="mbc-name">${object.name}</p>
-                    <p class="mbc-price">$${object.price}</p>
-                </span>
-                <i id="${object.id}" class="bi bi-dash-circle-fill subtract-quantity"></i> <p id="qty${object.id}" class="mbc-qty">${object.quantity}</p> <i id="${object.id}" class="bi bi-plus-circle-fill add-quantity"></i>
-                <button class="delete-btn" value="${object.id}">X</button>
-            `;
+    cart.forEach(object => {
+        const modalBodyContainer = document.createElement('div');
+        modalBodyContainer.className = 'modal-body-container';
+        modalBodyContainer.innerHTML = `
+            <img src="${object.img}">
+            <span class="mbc-name-price">
+                <p class="mbc-name">${object.name}</p>
+                <p class="mbc-price">$${object.price}</p>
+            </span>
+            <i id="${object.id}" class="bi bi-dash-circle-fill subtract-quantity"></i> <p id="qty${object.id}" class="mbc-qty">${object.quantity}</p> <i id="${object.id}" class="bi bi-plus-circle-fill add-quantity"></i>
+            <button class="delete-btn" value="${object.id}">X</button>
+        `;
         
-            modalBody.appendChild(modalBodyContainer);
-        });
-    }
+        modalBody.appendChild(modalBodyContainer);
+    });
 
-    
+    cartIsEmpty(cart);
 };
 
 
@@ -91,9 +118,27 @@ const deleteCartProduct = (id) => {
             // console.log(cart);
         }
     })
+
+    Toastify({
+        text: "¡Producto Eliminado!",
+        duration: 1500,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        style: {
+            background: "white",
+            borderRadius: "10px",
+            color: "black",
+            fontSize: '1.3rem'
+        },
+        offset: {
+            x: '1.5rem'
+          },
+      }).showToast();
+
     printCart(cart);
     updateQtyAndPrice(cart);
 }
+
 
 // Funcion para mostrar el precio total de los productos seleccionados en el carrito.
 const updateQtyAndPrice = (cart) => {
@@ -115,6 +160,7 @@ const updateQtyAndPrice = (cart) => {
     } 
 }
 
+
 // Funcion para pintar el valor total de la compra.
 const printQtyAndPrice = (totalCartQty, totalCartPrice) => {
     const cartCounter = document.getElementById('cartCounter');
@@ -124,26 +170,29 @@ const printQtyAndPrice = (totalCartQty, totalCartPrice) => {
     totalPrice.innerText = totalCartPrice;
 }
 
+
 // Funcion para RESTAR una unidad del producto en el carrito.
 const subtractOneUnity = (e) => {
     const idSubtractButton = cart.find(product => product.id == e.target.id);
     if (idSubtractButton.quantity > 1) {
         idSubtractButton.quantity--
     }
-    console.log(idSubtractButton);
+    // console.log(idSubtractButton);
     printCart(cart);
     saveCartStorage(cart);
 }
+
 
 // Funcion para SUMAR una uniodad del producto en el carrito.
 const addOneUnity = (e) => {
     const idAddButton = cart.find(product => product.id == e.target.id);
     idAddButton.quantity++
     
-    console.log(idAddButton);
+    // console.log(idAddButton);
     printCart(cart);
     saveCartStorage(cart);
 }
+
 
 
 
