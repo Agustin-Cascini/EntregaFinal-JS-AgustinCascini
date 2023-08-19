@@ -82,7 +82,6 @@ modalFooter.addEventListener('click', (e) => {
             confirmButtonColor: 'red',
             showCancelButton: true,
             cancelButtonText: 'Cancelar',
-            // cancelButtonColor: 'red',
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire ({

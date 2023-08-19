@@ -33,9 +33,10 @@ header {
 
 
 footer {
-    background-color: lightgreen;
+    background-color: grey;
     height: 100px;
     text-align: center;
+    font-size: 20px;
 }
 
 .main-title {
